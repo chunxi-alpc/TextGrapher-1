@@ -27,5 +27,15 @@ Text Content Grapher based on keyinfo extraction by NLP method。输入一篇文
 ２）本项目采用了高频词，关键词，命名实体识别，主谓宾短语识别等抽取方式，并尝试将三类信息进行图谱组织表示，这种表示方式是一种尝试。  
 ３）命名实体识别以及关键信息抽取受限于NLP的性能，在算法和方式上还存在多处不足。
 # Question?
- send mail to lhy_in_blcu@126.com  
- If any question about the project or me ,see https://liuhuanyong.github.io/
+原版的总有一些问题：关于乱码，空列表等问题本版本得以解决
+# 关于环境搭建
+
+python3.6
+使用pyltp-0.2.1-cp36-cp36m-win_amd64.whl 安装好pyltp
+http://ltp.ai/download.html
+使用3.3.1 
+https://github.com/chunxi-alpc/TextGrapher-1/blob/master/image/版本说明.png
+
+新建文件夹ltp
+把ltp_data文件夹，ltp-3.3.1-win-x86-Release.zip解压出来的内容放到ltp
+sentence_parser.py 中修改LTP_DIR 为新建文件夹ltp
