@@ -1,14 +1,12 @@
-#!/usr/bin/env python3
+
 # coding: utf-8
 # File: sentence_parser.py
-# Author: lhy<lhy_in_blcu@126.com,https://huangyong.github.io>
-# Date: 18-3-10
 import os
 from pyltp import Segmentor, Postagger, Parser, NamedEntityRecognizer
 
 class LtpParser():
     def __init__(self):
-        LTP_DIR = "./ltp_data"
+        LTP_DIR = "D:\python36\Lib\site-packages\ltp-3.3.1-win-x86\ltp_data"
         self.segmentor = Segmentor()
         self.segmentor.load(os.path.join(LTP_DIR, "cws.model"))
 

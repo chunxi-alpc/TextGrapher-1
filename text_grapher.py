@@ -1,9 +1,4 @@
-#!/usr/bin/env python3
-# coding: utf-8
-# File: crime_mining.py
-# Author: lhy<lhy_in_blcu@126.com,https://huangyong.github.io>
-# Date: 18-7-24
-
+# -*- coding: utf-8 -*-
 from sentence_parser import *
 import re
 from collections import Counter
@@ -120,7 +115,7 @@ class CrimeMining:
         rels = []
         sents = []
         ners = [i.split('/')[0] for i in set(ners)]
-        keyword = [i[0] for i in keyword]
+        #keyword = [i[0] for i in keyword]
         for sent in subsent:
             tmp = []
             for wd in sent:
@@ -145,8 +140,6 @@ class CrimeMining:
 
     '''挖掘主控函数'''
     def main(self, content):
-        if not content:
-            return []
         # 对文章进行去噪处理
         content = self.remove_noisy(content)
         # 对文章进行长句切分处理
@@ -164,6 +157,7 @@ class CrimeMining:
         triples = []
         # 存储文章事件
         events = []
+        
         for sent in subsents:
             words, postags = self.process_sent(sent)
             words_list += [[i[0], i[1]] for i in zip(words, postags)]
@@ -179,6 +173,7 @@ class CrimeMining:
 
         # 获取文章关键词, 并图谱组织, 这个可以做
         keywords = [i[0] for i in self.extract_keywords(words_list)]
+        
         for keyword in keywords:
             name = keyword
             cate = '关键词'
@@ -210,8 +205,9 @@ class CrimeMining:
         events_entity_keyword = self.rel_entity_keyword(ners, keywords, subsents_seg)
         events += events_entity_keyword
         #对事件网络进行图谱化展示
+        
         self.graph_shower.create_page(events)
-
+        
 
 content1 = '''
 新快报记者从广州警方获悉，2002年1月7日，广州番禺警方接到群众报警，称其朋友卢某（男）于1月6日凌晨失踪。民警随后在番禺区市桥街一出租屋内找到卢某，当时卢某已经死亡，身上财物丢失。案发后没多久，番禺警方就将涉嫌参与抢劫杀害卢某的其中三名嫌疑人耿某、胡某以及翁某（女）抓获归案，另有一名嫌疑人力天佑负案在逃。

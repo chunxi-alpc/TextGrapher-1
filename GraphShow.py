@@ -1,8 +1,4 @@
-#!/usr/bin/env python3
-# coding: utf-8
-# File: GraphShow.py
-# Author: lhy<lhy_in_blcu@126.com,https://huangyong.github.io>
-# Date: 18-7-24
+# -*- coding: utf-8 -*-
 
 '''创建展示页面'''
 class GraphShow():
@@ -10,6 +6,7 @@ class GraphShow():
         self.base = '''
     <html>
     <head>
+      
       <script type="text/javascript" src="VIS/dist/vis.js"></script>
       <link href="VIS/dist/vis.css" rel="stylesheet" type="text/css">
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -82,13 +79,12 @@ class GraphShow():
             data['label'] = ''
             data['to'] = node_dict.get(edge[1])
             data_edges.append(data)
-
         self.create_html(data_nodes, data_edges)
         return
 
     '''生成html文件'''
     def create_html(self, data_nodes, data_edges):
-        f = open('graph_show.html', 'w+')
+        f = open('graph_show.html', 'w+',encoding='utf-8')
         html = self.base.replace('data_nodes', str(data_nodes)).replace('data_edges', str(data_edges))
         f.write(html)
         f.close()
