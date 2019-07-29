@@ -30,12 +30,13 @@ Text Content Grapher based on keyinfo extraction by NLP method。输入一篇文
 原版的总有一些问题：关于乱码，空列表等问题本版本得以解决
 # 关于环境搭建
 
-python3.6
-使用pyltp-0.2.1-cp36-cp36m-win_amd64.whl 安装好pyltp
-http://ltp.ai/download.html
-使用3.3.1 
+１）python3.6
+２）使用pyltp-0.2.1-cp36-cp36m-win_amd64.whl 安装好pyltp
+３）http://ltp.ai/download.html   使用3.3.1 
 https://github.com/chunxi-alpc/TextGrapher-1/blob/master/image/版本说明.png
 
-新建文件夹ltp
-把ltp_data文件夹，ltp-3.3.1-win-x86-Release.zip解压出来的内容放到ltp
-sentence_parser.py 中修改LTP_DIR 为新建文件夹ltp
+１）新建文件夹ltp
+２）把ltp_data文件夹，ltp-3.3.1-win-x86-Release.zip解压出来的内容放到ltp
+３）sentence_parser.py 中修改LTP_DIR 为新建文件夹ltp
+
+# more details
